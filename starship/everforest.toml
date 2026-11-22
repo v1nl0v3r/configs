@@ -1,0 +1,100 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[░▒▓](#a7c080)\
+$os\
+[\ue0b0](bg:#414b50 fg:#a7c080)\
+$directory\
+[\ue0b0](fg:#414b50 bg:#374145)\
+$git_branch\
+$git_status\
+[\ue0b0](fg:#374145 bg:#2e383c)\
+$nodejs\
+$bun\
+$rust\
+$golang\
+$php\
+[\ue0b0](fg:#2e383c bg:#272e33)\
+$time\
+[\ue0b0 ](fg:#272e33)\
+\n$character"""
+
+[os]
+style = "bg:#a7c080 fg:#1e2326"
+format = "[ $symbol ]($style)"
+disabled = false
+
+[directory]
+style = "fg:#d3c6aa bg:#414b50"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "\U000f0219 "
+"Downloads" = "\uf019 "
+"Music" = "\uf001 "
+"Pictures" = "\uf03e "
+
+[git_branch]
+symbol = "\ue0a0"
+style = "bg:#374145"
+format = '[[ $symbol $branch ](fg:#a7c080 bg:#374145)]($style)'
+
+[git_status]
+style = "bg:#374145"
+format = '[[($all_status$ahead_behind )](fg:#dbbc7f bg:#374145)]($style)'
+
+[jj_bookmark]
+symbol = "\ue0a0"
+style = "bg:#374145"
+format = '[[ $symbol $bookmark(@$remote)$diverged( \\(+$overflow_count others\\)) ](fg:#a7c080 bg:#374145)]($style)'
+
+[jj_status]
+style = "bg:#374145"
+format = '[[($all )](fg:#dbbc7f bg:#374145)]($style)'
+
+[nodejs]
+symbol = "\ue718"
+style = "bg:#2e383c"
+format = '[[ $symbol ($version) ](fg:#a7c080 bg:#2e383c)]($style)'
+
+[bun]
+symbol = "\ue76f"
+style = "bg:#2e383c"
+format = '[[ $symbol ($version) ](fg:#a7c080 bg:#2e383c)]($style)'
+
+[rust]
+symbol = "\ue7a8"
+style = "bg:#2e383c"
+format = '[[ $symbol ($version) ](fg:#a7c080 bg:#2e383c)]($style)'
+
+[golang]
+symbol = "\ue626"
+style = "bg:#2e383c"
+format = '[[ $symbol ($version) ](fg:#a7c080 bg:#2e383c)]($style)'
+
+[php]
+symbol = "\ue73d"
+style = "bg:#2e383c"
+format = '[[ $symbol ($version) ](fg:#a7c080 bg:#2e383c)]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:#272e33"
+format = "[[ \uf017 $time ](fg:#859289 bg:#272e33)]($style)"
+
+[os.symbols]
+Arch = "\U000f08c7"
+Artix = "\U000f08c7"
+EndeavourOS = "\uf322"
+Manjaro = "\uf312"
+Debian = "\U000f08da"
+Ubuntu = "\U000f0548"
+Fedora = "\U000f08db"
+Alpine = "\uf300"
+NixOS = "\uf313"
+Linux = "\U000f033d"
+Macos = "\U000f0035"
+Windows = "\U000f05b2"
